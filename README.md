@@ -118,3 +118,7 @@ VITE_API_URL=BACKEND_URL
 ~1h: Deployment
 
 
+* Note:
+  Please be aware that the app fetches metadata (title, favicon, etc.) from external websites. If a website has blocked automated requests or uses protection mechanisms (e.g., CORS restrictions, bot detection), the fetch may fail and display an error when trying to add that bookmark.
+
+	Example: Some sites like GeeksforGeeks may block such requests.
