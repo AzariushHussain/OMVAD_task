@@ -15,11 +15,9 @@ const AuthForm = ({ setToken }) => {
             const endpoint = isLogin ? '/login' : '/register';
             const res = await axios.post(`${API_URL}${endpoint}`, { email, password });
             console.log("Login response: ",res);
-            if (isLogin) {
-                localStorage.setItem('token', res.data.data.token);
-                setToken(res.data.token);
-                window.location.reload(); 
-            }
+            localStorage.setItem('token', res.data.data.token);
+            setToken(res.data.token);
+            window.location.reload(); 
             setMessage(res.data.message || 'Success!');
         } catch (err) {
             setMessage(err.response?.data?.message || 'Error!');
